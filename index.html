@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>coffeerun</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+  form :focus:required:invalid{
+    border-color: #a94442;
+  }
+  </style>
+</head>
+
+<body class="container">
+  <header>
+    <h1>CoffeeRun</h1>
+  </header>
+
+
+  <div class="modal fade" id="achievement">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Congratulations</h1>
+        </div>
+        <div class="modal-body">
+          <p class="lead">You ordered some crazy coffee.</p>
+          <p>Want to add some magic power-up to your order?</p>
+        </div>
+        <form data-achiev-form="form">
+          <div class="form-group">
+            <label for="powerUp">Add a bonus power-up: </label>
+            <select id="powerUp" class="form-control" name="powerUp">
+              <option value="caramel">Time Travel</option>
+              <option value="almond">Mind Reading</option>
+              <option value="mocha">Bug-Free Code</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Awesome!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <div class="form-group">
+            <label for="coffeeOrder">Order</label>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+" />
+          </div>
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com" required/>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="short">
+              Short
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="tall" checked>
+              Tall
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="grande">
+              Grande
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="trenta">
+              Trenta
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select id="flavorShot" class="form-control" name="flavor">
+              <option value="">None</option>
+              <option value="caramel">Caramel</option>
+              <option value="almond">Almond</option>
+              <option value="mocha">Mocha</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating: <span id="rating" style="strong"> Number </span></label>
+            <input name="strength" id="strengthLevel" type="range" value="30">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist">
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+charset="utf-8"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="webshim/polyfiller.js" charset="utf-8"></script>
+<script src="scripts/validation.js" charset="utf-8"></script>
+<script src="scripts/checklist.js" charset="utf-8"></script>
+<script src="scripts/formhandler.js" charset="utf-8"></script>
+<script src="scripts/datastore.js" charset="utf-8"></script>
+<script src="scripts/truck.js" charset="utf-8"></script>
+<script src="scripts/main.js" charset="utf-8"></script>
+
+</html>
